@@ -17,6 +17,18 @@ public class SalvaPersonas {
         {
             per=new Migrante(cedula);
         }
+        else if(tipo.equals("Indigena"))
+        {
+            per=new Indigena(cedula);
+        }
+        else if(tipo.equals("Ciudadano"))
+        {
+            per=new Ciudadano(cedula);
+        }
+        else if(tipo.equals("Refugiado"))
+        {
+            per=new Refugiado(cedula);
+        }
         return per;
     }
     

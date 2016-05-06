@@ -20,4 +20,12 @@ public class Array {
     {
         lista.add(element);
     }
+    public ArrayList<Object> getArray()
+    {
+        return lista;
+    }
+    public void setArray(ArrayList<Object> array)
+    {
+        lista=array;
+    }
 }

@@ -6,6 +6,7 @@
 package Controlador;
 
 import Vista.IngresarDatos;
+import Vista.Reporte;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

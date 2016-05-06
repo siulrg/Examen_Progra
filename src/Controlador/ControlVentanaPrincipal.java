@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.Array;
 import Vista.IngresarDatos;
 import Vista.Reporte;
 import java.awt.event.ActionEvent;
@@ -19,20 +20,25 @@ public class ControlVentanaPrincipal implements ActionListener {
     
     private IngresarDatos ingreso;
     private Reporte resultado;
+    private Array array;
     
     
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand().equalsIgnoreCase("Salir")) {
+        if (e.getActionCommand().equalsIgnoreCase("Salir")){
             System.exit(0);
         }
         
         else if (e.getActionCommand().equalsIgnoreCase("Ingresar Datos")){
-            this.ingreso = new IngresarDatos(array de personas); 
+            this.ingreso = new IngresarDatos(array); 
+        }
+        
+        else if(e.getActionCommand().equalsIgnoreCase("General Archivo XML")){
+           // this.generarXML = new 
         }
         
         else if (e.getActionCommand().equalsIgnoreCase("Resultado")){
-            this.resultado= new Reporte(array de resultado);
+            this.resultado= new Reporte(array);
         }
 }

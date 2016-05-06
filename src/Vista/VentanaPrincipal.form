@@ -9,9 +9,14 @@
             <Property name="text" type="java.lang.String" value="Ingresar"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="IngresarDatos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ingresar ciudadano"/>
+                <Property name="text" type="java.lang.String" value="Ingresar Datos"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Salir">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Salir"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -21,7 +26,7 @@
             <Property name="text" type="java.lang.String" value="Reporte"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="Resultado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Resultado"/>
               </Properties>

@@ -5,17 +5,25 @@
  */
 package Vista;
 
+import Controlador.ControlVentanaPrincipal;
+
 /**
  *
  * @author Ariel
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    private final ControlVentanaPrincipal controlPrincipal;
+
     /**
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
         initComponents();
+        this.controlPrincipal= new ControlVentanaPrincipal();
+        this.IngresarDatos.addActionListener(controlPrincipal);
+        this.Resultado.addActionListener(controlPrincipal);
+        this.Salir.addActionListener(controlPrincipal);
     }
 
     /**
@@ -30,9 +38,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        IngresarDatos = new javax.swing.JMenuItem();
+        Salir = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        Resultado = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,15 +49,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Ingresar");
 
-        jMenuItem1.setText("Ingresar ciudadano");
-        jMenu1.add(jMenuItem1);
+        IngresarDatos.setText("Ingresar Datos");
+        jMenu1.add(IngresarDatos);
+
+        Salir.setText("Salir");
+        jMenu1.add(Salir);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Reporte");
 
-        jMenuItem2.setText("Resultado");
-        jMenu2.add(jMenuItem2);
+        Resultado.setText("Resultado");
+        jMenu2.add(Resultado);
 
         jMenuBar1.add(jMenu2);
 
@@ -110,11 +122,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem IngresarDatos;
+    private javax.swing.JMenuItem Resultado;
+    private javax.swing.JMenuItem Salir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
+
 }
+

@@ -32,15 +32,17 @@ public class ControlVentanaPrincipal implements ActionListener {
         
         else if (e.getActionCommand().equalsIgnoreCase("Ingresar Datos")){
             this.ingreso = new IngresarDatos(array); 
-            ingreso.show();
         }
         
         else if(e.getActionCommand().equalsIgnoreCase("General Archivo XML")){
            // this.generarXML = new 
+            this.ingreso = new IngresarDatos(array=new Array()); 
         }
         
         else if (e.getActionCommand().equalsIgnoreCase("Resultado")){
             this.resultado= new Reporte(array);
             resultado.show();
-        }
+        }            ingreso.show();
+
+}
 }

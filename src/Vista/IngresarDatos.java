@@ -5,7 +5,10 @@
  */
 package Vista;
 
+import Controlador.ControlCiudadano;
+import Controlador.ControlPais;
 import Modelo.Array;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -13,15 +16,23 @@ import Modelo.Array;
  */
 public class IngresarDatos extends javax.swing.JFrame {
 
+    private final ControlPais controlPais;
+    private final ControlCiudadano controlGente;
     /**
      * Creates new form IngresarCiudadano
      */
     public IngresarDatos() {
         initComponents();
+        
+        this.controlPais = new ControlPais();
+        this.controlGente = new ControlCiudadano();
+        this.jPais.addActionListener(controlPais);
+        this.jAgregar.addActionListener((ActionListener) controlGente);
     }
 
-    public IngresarDatos(Array array) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   
+    public void llenarAreaTexto(String jtPais){
+       this.AreaTexto.setText(jtPais+"\n");
     }
 
     /**
@@ -34,28 +45,28 @@ public class IngresarDatos extends javax.swing.JFrame {
     private void initComponents() {
 
         panelDatos1 = new Vista.PanelDatos();
-        jButton1 = new javax.swing.JButton();
+        jAgregar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
+        AreaTexto = new javax.swing.JTextArea();
+        jPais = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jtPais = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Agregar");
+        jAgregar.setText("Agregar");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        AreaTexto.setColumns(20);
+        AreaTexto.setRows(5);
+        jScrollPane1.setViewportView(AreaTexto);
 
-        jButton2.setText("Agregar País a la Lista");
+        jPais.setText("Agregar País a la Lista");
 
         jLabel1.setText("País a agregar");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jtPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jtPaisActionPerformed(evt);
             }
         });
 
@@ -68,7 +79,7 @@ public class IngresarDatos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jButton1)
+                        .addComponent(jAgregar)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panelDatos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -77,10 +88,10 @@ public class IngresarDatos extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1))
+                                .addComponent(jtPais))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
-                                .addComponent(jButton2)
+                                .addComponent(jPais)
                                 .addGap(0, 23, Short.MAX_VALUE)))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -101,20 +112,20 @@ public class IngresarDatos extends javax.swing.JFrame {
                                 .addGap(52, 52, 52)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel1)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jtPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2)))))
+                                .addComponent(jPais)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(jAgregar)
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jtPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jtPaisActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,12 +164,14 @@ public class IngresarDatos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JTextArea AreaTexto;
+    private javax.swing.JButton jAgregar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jPais;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jtPais;
     private Vista.PanelDatos panelDatos1;
     // End of variables declaration//GEN-END:variables
+
+    
 }

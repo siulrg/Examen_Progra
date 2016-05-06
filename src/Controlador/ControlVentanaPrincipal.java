@@ -32,6 +32,7 @@ public class ControlVentanaPrincipal implements ActionListener {
         
         else if (e.getActionCommand().equalsIgnoreCase("Ingresar Datos")){
             this.ingreso = new IngresarDatos(array); 
+            ingreso.show();
         }
         
         else if(e.getActionCommand().equalsIgnoreCase("General Archivo XML")){
@@ -40,5 +41,6 @@ public class ControlVentanaPrincipal implements ActionListener {
         
         else if (e.getActionCommand().equalsIgnoreCase("Resultado")){
             this.resultado= new Reporte(array);
+            resultado.show();
         }
 }

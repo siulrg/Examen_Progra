@@ -26,15 +26,21 @@ public class ControlVentanaPrincipal implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand().equalsIgnoreCase("Salir")) {
+        if (e.getActionCommand().equalsIgnoreCase("Salir")){
             System.exit(0);
         }
         
         else if (e.getActionCommand().equalsIgnoreCase("Ingresar Datos")){
+            this.ingreso = new IngresarDatos(array); 
+        }
+        
+        else if(e.getActionCommand().equalsIgnoreCase("General Archivo XML")){
+           // this.generarXML = new 
             this.ingreso = new IngresarDatos(array=new Array()); 
         }
         
         else if (e.getActionCommand().equalsIgnoreCase("Resultado")){
             this.resultado= new Reporte(array);
         }
+}
 }

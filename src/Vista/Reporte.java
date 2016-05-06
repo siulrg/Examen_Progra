@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import Modelo.Array;
+
 /**
  *
  * @author Ariel
@@ -16,6 +18,10 @@ public class Reporte extends javax.swing.JFrame {
      */
     public Reporte() {
         initComponents();
+    }
+
+    public Reporte(Array array) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
